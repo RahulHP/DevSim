@@ -1,11 +1,8 @@
-from random import randint
-
-
 class Human(object):
 
-    def __init__(self, world):
+    def __init__(self, world=None, age=20):
         self.maxAge = 50
-        self.age = randint(0, 30)
+        self.age = age
         self.alive = True
         self.world = world
 
@@ -13,3 +10,9 @@ class Human(object):
         self.age += 1
         if self.age > self.maxAge:
             self.alive = False
+
+    def get_age(self):
+        return self.age
+
+    def is_alive(self):
+        return self.alive

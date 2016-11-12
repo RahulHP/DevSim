@@ -1,16 +1,15 @@
 from humans import Human
+from random import randint
 
 
 class World(object):
 
-    def __init__(self,init_pop):
+    def __init__(self,init_pop = 10):
         print "Creating World"
         self.population = list()
         self.popcount = 0
         self.year = 0
         self.populate(init_pop)
-        self.run()
-
 
     def get_pop(self):
         return len(self.population)
@@ -24,7 +23,7 @@ class World(object):
 
     def populate(self,init_pop):
         for i in xrange(init_pop):
-            h = Human.Human(self)
+            h = Human.Human(self,randint(0,30))
             self.add_human(h)
 
         self.update_pop()
