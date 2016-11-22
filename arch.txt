@@ -1,0 +1,68 @@
+DevSim architecture
+
+Entities
+--------
+
+
+1) Human
+-------------------------------------------------------------------------------------
+
+Properties ( 0.0 to 1.0 )
+
+a) Health (0 to 1.0)
+b) Wealth (0 to infinity)
+c) Assets (0 to infinity) - represents land etc
+
+Behavior
+
+a) Survival
+Wealth reduces by X, if wealth reaches 0, health reduces. 
+X is inversely proportional to health - meaning unhealthy people need more wealth to survive - treatment, medicines etc.
+
+b) Production (assume farming model)
+Wealth increases per production cycle, proportional to Health * Assets 
+The healthier you are the more you can produce 
+The more assets you have, the more you can produce
+See Environment for more details
+
+c) Interaction
+
+There are several effects of interaction.
+Each sides wealth or health can increase or decrease
+
+
+- Relationship/Social contact : Both parties health increases 
+- Business : Both parties wealth increases 
+
+- Violent crime : One parties health decreases
+- Bad luck : One parties wealth decreases
+
+- White collar crime : One parties wealth decreases others increases
+- Dependency/Care : One parties health decreases others increases
+
+- Altercation - Both parties health decreases
+- Litigation - Both parties wealth decreases
+
+
+For simplicity we will just randomly choose what any interaction results in.
+We can use a distribution of these 8 interactions that defines what kind of a society it is
+
+In future, the societies distribution of interactions changes based on average health and wealth of all the individuals.
+This is how it works in real life - as societies progress, there are less health based interactions like fistfights and more wealth based ones. As they progress more, there is increase of win/win transactions over win/lose transactions.
+
+
+2) Environment
+------------------------------------------------------------------------
+
+There is fixed amount of environment (read land area)
+
+The land is used by humans to create wealth, by putting in health.
+Land has an effort co-efficient, which is the ratio of health to wealth.
+Each time it is "farmed"  or "mined", the effort co-eff increases
+Each production cycle that it is left untouched, the co-eff decreases
+
+The balance between this + and - can define whether its a 100% renewable resource like a food farm, or a 100% non renewable one like a coal farm.
+
+
+
+
